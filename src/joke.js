@@ -1,4 +1,4 @@
-const request = require("request-promise");
+import request from "request-promise";
 
 const options = {
   method: "GET",
@@ -10,9 +10,7 @@ const options = {
   json: true,
 };
 
-async function getJoke() {
+export default async function getJoke() {
   const res = await request(options);
   return res.joke;
 }
-
-module.exports = getJoke;
